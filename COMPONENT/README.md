@@ -4,13 +4,13 @@
 
 আমাদের React এর মধ্যে যে element ছিল সেটা আসলে ফাংশনাল কোন কিছু ছিল না। আমাদের ফাংশনাল বৈশিষ্ট্য সহ কিছুর দরকার ছিল যাতে আমরা আমাদের ডাটা ডাইন্যামিক ভাবে আমাদের অ্যাপে দেখাতে পারি। আর এই ফাংশনাল বৈশিষ্ট্যসহ যেই জিনিসটা আমরা আমাদের React অ্যাপে ব্যাবহার করি সেটাই হচ্ছে component। React এর ভিতরে ফাংশন হচ্ছে component আর component React এর element return করে। যেমনঃ
 function clock () { </br>
-\t return ( </br>
-\t \t <div> </br>
-\t \t \t <h1 class ="heading"> </br>
-\t \t \t \t <span class="text"></span></br>
+&emsp; return ( </br>
+&emsp; &emsp; <div> </br>
+&emsp; &emsp; &emsp; <h1 class ="heading"> </br>
+&emsp; &emsp; &emsp; &emsp; <span class="text"></span></br>
 
 </h1>
-\t \t </div> </br>
+&emsp; &emsp; </div> </br>
 
 )
 }
