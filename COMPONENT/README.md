@@ -34,4 +34,43 @@ root.render(<Clock locale="bn-BD"/>);
 root.render(<Clock locale="bn-BD" name="bangladesh" id="1971" />);
 ```
 
-তাহলে আমাদের Clock ফাংশনের argument এ পেতাম {locale: 'bn-BD', name: 'bangladesh', id: '1971'}
+তাহলে আমাদের Clock ফাংশনের argument এ পেতাম {locale: 'bn-BD', name: 'bangladesh', id: '1971'}। এভাবে পাস করলে এগুলোকে props বলে। আবার আমরা যদি এই ফাংশনের ভিতরে কিছু লিখতাম তাহলে সেটা আমরা props.children এর মধ্যে পেতাম।
+
+```
+const root = ReactDOM.createRoot(document.getElementById("root"));
+function Clock(props) {
+  console.log(props);
+  return (
+    <h1 className="heading">
+      {props.children}
+      <span className="text"></span>
+      <span className="time">{new Date().toLocaleTimeString()}</span>
+    </h1>
+  );
+}
+root.render( <Clock locale="bn-BD" id="1971"> BD Time Now </Clock> );
+```
+
+props এর আউটপুট console এ {locale: 'bn-BD', id: '1971', children: 'BD Time Now'} । props এর মান শুধু বাহির থেকেই পাস করতে হবে এবং props এর মান ভিতর থেকে পরিবর্তন করা যাবে না। props পরিবর্তন করার সাথে সাথে component টি re-render হবে। তো ভিতর থেকে props পরিবর্তন করলে আমরা infinite লুপের মধ্যে পড়বো, তাই আমরা কখনোই কোন component এর ভিতরে props এর মান পরিবর্তন করব না।
+
+<br/>
+এভাবে ফাংশনের মাধ্যমে component তৈরি করা হলে তাকে React এর ভাষায় functional component বলা হয়। React এ functional component ছাড়াও class component syntax আছে। React এর functional component কে বলা হয় stateless component আর class component কে বলা হয় sateful component।
+
+> Class Component <br/>
+
+```
+const root = ReactDOM.createRoot(document.getElementById("root"));
+class Clock extends React.Component {
+  render() {
+    return (
+      <h1 className="heading">
+        <span className="text"></span>
+        <span className="time">
+          {new Date().toLocaleTimeString(this.props.locale)}
+        </span>
+      </h1>
+    );
+  }
+}
+root.render(<Clock locale="bn-BD" />);
+```
