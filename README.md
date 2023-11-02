@@ -10,4 +10,5 @@
 জখনি আমরা কোন application সম্পরকে কথা বলি তখন সেখানে দুইটি পার্ট থাকে।
 1. Frontend বা User Interface
 2. Backend
-<br/>Frontend হলো, যেখানে user interact করে। যেমন, browse করে, click করে, form submit করে ইত্যাদি ইত্যাদি। এবং আমাদের frontend এই interaction অনুযায়ী রেসপন্স করে backend এর সহায়তা নিয়ে। আর react শুধুমাত্র user ইন্টারফেস নিয়ে concern। তার মানে user এর action এর response করা, information display করা বা render করাটাই এর কাজ। <br/>
+<br/>
+Frontend হলো, যেখানে user interact করে। যেমন, browse করে, click করে, form submit করে ইত্যাদি ইত্যাদি। এবং আমাদের frontend এই interaction অনুযায়ী রেসপন্স করে backend এর সহায়তা নিয়ে। আর react শুধুমাত্র user ইন্টারফেস নিয়ে concern। তার মানে user এর action এর response করা, information display করা বা render করাটাই এর কাজ। <br/>
