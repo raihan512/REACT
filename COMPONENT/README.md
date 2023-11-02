@@ -56,7 +56,7 @@ props এর আউটপুট console এ {locale: 'bn-BD', id: '1971', childr
 <br/>
 এভাবে ফাংশনের মাধ্যমে component তৈরি করা হলে তাকে React এর ভাষায় functional component বলা হয়। React এ functional component ছাড়াও class component syntax আছে। React এর functional component কে বলা হয় stateless component আর class component কে বলা হয় sateful component।
 
-> Class Component <br/>
+**Class Component** <br/>
 
 ```
 const root = ReactDOM.createRoot(document.getElementById("root"));
