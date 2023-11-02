@@ -21,8 +21,7 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 <img align="right" width="370" src="https://i.ibb.co/Z8ZwNxF/Capture.png"/> <br/>
 <br/>
 এখানে আমাদের উদ্দেশ্য হলো increment + বাটনে ক্লিক করলে আমদের এই display id এর মান এক এক করে বাড়তে থাকবে। এই কাজ করার জন্য আমাদের JS কোড
-<br/>
-<img src="https://i.ibb.co/W5t5KQK/script-js.png"/>
+<img align="right" width="370" src="https://i.ibb.co/W5t5KQK/script-js.png"/>
 
 
 
