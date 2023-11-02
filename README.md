@@ -18,7 +18,7 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 প্রথমে আমরা vanilla JS দিয়ে একটা ছোট UI বানাবো এবং সেখান থেকে দেখবো কেন React useful এবং কি অতিরিক্ত সুবিধা আমরা পাচ্ছি react ব্যাবহার করার কারনে।
 <br/>
 <img align="left" width="500" src="https://i.ibb.co/tm5VbPG/ht.png"/>
-<img align="left" width="500" src="https://i.ibb.co/Z8ZwNxF/Capture.png"/>
+<img align="right" width="500" src="https://i.ibb.co/Z8ZwNxF/Capture.png"/>
 <br/>
 <p align="center">
   <img width="460" height="300" src="http://www.fillmurray.com/460/300">
