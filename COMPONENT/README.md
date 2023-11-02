@@ -52,9 +52,9 @@ root.render( <Clock locale="bn-BD" id="1971"> BD Time Now </Clock> );
 ```
 
 props এর আউটপুট console এ {locale: 'bn-BD', id: '1971', children: 'BD Time Now'} । props এর মান শুধু বাহির থেকেই পাস করতে হবে এবং props এর মান ভিতর থেকে পরিবর্তন করা যাবে না। props পরিবর্তন করার সাথে সাথে component টি re-render হবে। তো ভিতর থেকে props পরিবর্তন করলে আমরা infinite লুপের মধ্যে পড়বো, তাই আমরা কখনোই কোন component এর ভিতরে props এর মান পরিবর্তন করব না।
-
 <br/>
 এভাবে ফাংশনের মাধ্যমে component তৈরি করা হলে তাকে React এর ভাষায় functional component বলা হয়। React এ functional component ছাড়াও class component syntax আছে। React এর functional component কে বলা হয় stateless component আর class component কে বলা হয় sateful component।
+<br/>
 <br/>
 
 **Class Component**
