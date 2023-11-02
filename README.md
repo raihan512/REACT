@@ -18,7 +18,7 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 প্রথমে আমরা vanilla JS দিয়ে একটা ছোট UI বানাবো এবং সেখান থেকে দেখবো কেন React useful এবং কি অতিরিক্ত সুবিধা আমরা পাচ্ছি react ব্যাবহার করার কারনে।
 
 <img align="left" width="200" src="https://i.ibb.co/9Y1qs9s/Capture.png"/>
-
+```
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,3 +38,4 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 </body>
 
 </html>
+```
