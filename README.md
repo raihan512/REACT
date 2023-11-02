@@ -22,4 +22,4 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 <br/>
 এখানে আমাদের উদ্দেশ্য হলো increment + বাটনে ক্লিক করলে এই আমদের এই display id এর মান এক এক করে বাড়তে থাকবে। এই কাজ করার জন্য আমাদের JS কোড
 <br/>
-<img align="center" width="600" src="https://ibb.co/f8tVtzJ"/>
+<img align="center" width="600" src="https://i.ibb.co/mvtrtVp/script-js.png"/>
