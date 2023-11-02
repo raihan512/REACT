@@ -17,7 +17,7 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 <br/>
 প্রথমে আমরা vanilla JS দিয়ে একটা ছোট UI বানাবো এবং সেখান থেকে দেখবো কেন React useful এবং কি অতিরিক্ত সুবিধা আমরা পাচ্ছি react ব্যাবহার করার কারনে।
 <br/>
-<img width="370" src="https://i.ibb.co/tm5VbPG/ht.png"/>
+<img align="left" width="500" src="https://i.ibb.co/tm5VbPG/ht.png"/>
 <img width="370" src="https://i.ibb.co/Z8ZwNxF/Capture.png"/>
 <br/>
 এখানে আমাদের উদ্দেশ্য হলো increment + বাটনে ক্লিক করলে আমদের এই display id এর মান এক এক করে বাড়তে থাকবে। এই কাজ করার জন্য আমাদের JS কোড
