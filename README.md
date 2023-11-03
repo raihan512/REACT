@@ -29,7 +29,6 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 এই সমস্যাটা ফেসবুকের ইঞ্জিনিয়ার রাও ফেস করেছিল। কারণ, ফেসবুকের মত এত বিশাল অ্যাপ্লিকেশনের UI অনেক কমপ্লেক্স এবং সেটা শুধুমাত্র vanilla JS দিয়ে ম্যানেজ করা কঠিন হচ্ছিল। তাই তারা এটার সমাধান নিয়ে কাজ করছিল এবং ২০১১ সালে ফেসবুকের একজন ইঞ্জিনিয়ার Jordan Walke ১ম react js এর একটা প্রোটোটাইপ তৈরি করেন এবং তার নাম দেন fax js। ২০১৩ সালে fax js এর নাম পরিবর্তন করে react js রাখা হয় এবং এটিকে ওপেন সোর্স করে দেয়া হয়। বর্তমানে বেশ বড় বড় কোম্পানিতে react js ব্যাবহৃত হচ্ছে যেমনঃ Netflix, facebook, whatsapp ইত্যাদি।
 <br/>
 এবার আমরা আমাদের আগের প্রোগ্রামটার সমাধান টা react js দিয়ে করব।
-<img src="https://i.ibb.co/HVvW7fc/112.png"/>
 
 ```
 <body>
@@ -57,4 +56,19 @@ const domContainer = document.getElementById("root");
 1. কি প্রিন্ট করবো তা
 2. কোথায় প্রিন্ট করবো
 জেমনঃ ReactDOM.render('Hello World', domContainer)
+```
+তো, ReactDOM আমাদের এই কনটেন্ট কে আমাদের root div এর মধ্যে render করে দিবে এবং আমরা screen এ Hello World লেখাটি দেখতে পাব। এখানে আমরা জাস্ট একটা টেক্সট রেন্ডার করেছি। কিন্তু আমরা চাইলে এখানে যেকোন কিছু রেন্ডার করতে পারবো। শুধু টেক্সট রেন্ডার করে তো আমাদের কোন লাভ নেই। React library দিয়ে আমরা useful জিনিস বানাতে পারি এবং সেগুলোকে রেন্ডার করতে পারি। এই জিনিসগুলোকে react element বলে। React library আমাদেরকে কিছু useful function দিয়েছে, জেগুলো ব্যাবহার করে আমরা react element বানাতে পারি। সেরকম একটা ফাংশন হলো
+```
+React.createElement()
+```
+এই React.createElement() টি ৩টি প্যারামিটার নেয়। যার মধ্যে 
+1. কি বা কোন element যোগ করতে চাচ্ছি তা (যেমনঃ div, h1, p)
+2. এই তৈরিকৃত element এর মধ্যে কি ডাটা পাস করতে চাচ্ছি।
+3. সেই element এর ভিতরে কি কনটেন্ট থাকবে
+
+উদাহরণ
+```
+const domContainer = document.getElementById("root");
+const myElement = React.createElement("div", null, "Hello World");
+ReactDom.render(myElement, domContainer);
 ```
