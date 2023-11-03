@@ -57,11 +57,9 @@ button.addEventListener("click", function () {
 
 ```
 এখানে আমরা প্রথমে এই root আইডিটাকে ধরব
-const domContainer = document.getElementById("root");
-তারপর ReactDOM এর Render method কে কল করবো। এবং এই Render method টি দুটি প্যারামিটার রিসিভ করে।
-1. কি প্রিন্ট করবো তা
-2. কোথায় প্রিন্ট করবো
-জেমনঃ ReactDOM.render('Hello World', domContainer)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+তারপর ReactDOM এর Render method কে কল করবো। এবং এই Render method টি প্যারামিটার রিসিভ করে। কি প্রিন্ট করবো তা এই প্যারামিটার এর মধ্যে বলে দিতে হবে।
+যেমনঃ root.render("Hello World");
 ```
 তো, ReactDOM আমাদের এই কনটেন্ট কে আমাদের root div এর মধ্যে render করে দিবে এবং আমরা screen এ Hello World লেখাটি দেখতে পাব। এখানে আমরা জাস্ট একটা টেক্সট রেন্ডার করেছি। কিন্তু আমরা চাইলে এখানে যেকোন কিছু রেন্ডার করতে পারবো। শুধু টেক্সট রেন্ডার করে তো আমাদের কোন লাভ নেই। React library দিয়ে আমরা useful জিনিস বানাতে পারি এবং সেগুলোকে রেন্ডার করতে পারি। এই জিনিসগুলোকে react element বলে। React library আমাদেরকে কিছু useful function দিয়েছে, জেগুলো ব্যাবহার করে আমরা react element বানাতে পারি। সেরকম একটা ফাংশন হলো
 ```
@@ -74,17 +72,39 @@ React.createElement()
 
 উদাহরণ
 ```
-const domContainer = document.getElementById("root");
+const root = ReactDOM.createRoot(document.getElementById("root"));
 const myElement = React.createElement("div", null, "Hello World");
-ReactDom.render(myElement, domContainer);
+root.render(myElement);
 ```
 এবার আমরা আমাদের browser এ inspect করলে দেখতে পাব root div এর মধ্যে আরেকটা div তৈরি হয়েছে যার মধ্যে Hello World লেখাটি আছে। এখন ধরা যাক, আমরা এই div এর মধ্যে একটা p element যুক্ত করতে চাই। তাহলে
 
 ```
-const domContainer = document.getElementById("root");
-const myElement = React.createElement("div", null, React.createElement("p", null, "Hello World"));
-ReactDom.render(myElement, domContainer);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const myElement = React.createElement("div", null, React.createElement('p', null,"Hello World"));
+root.render(myElement);
 ```
 
 এবার আমরা আমাদের browser এ inspect করলে দেখতে পাব root div এর মধ্যে আরেকটা div তৈরি হয়েছে যার মধ্যে p element টি আছে এবং এই p element এর ভিতরে Hello World লেখাটি আছে। এখন আমরা যদি ২টা element দিতে চাই তাহলে আমরা array of elements ও দিতে পারবো। 
-<img src="https://i.ibb.co/GxmR5Wx/arrofeleemnts.png" />
+
+```
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const paragraphs = [
+  React.createElement("p", null, "Hello World"),
+  React.createElement("p", null, "Hello Bangladesh"),
+];
+const myElement = React.createElement("div", null, [paragraphs]);
+root.render(myElement);
+```
+এবার আমরা আমাদের browser এ inspect করলে দেখতে পাব root div এর মধ্যে আরেকটা div তৈরি হয়েছে যার মধ্যে দুটি p element আছে। প্রথম  p element এর ভিতরে Hello World লেখাটি আছে। আর ২য় p element এর ভিতরে Hello Bangladesh লেখাটি আছে। 
+<br/><br/>
+এখন কথা হচ্ছে এভাবে react দিয়ে element তৈরি করে আমাদের লাভ কি? উল্টো এই সিনট্যাক্স বেশ জটিল। আমরা যখন HTML markup লিখি, তখন DOM কিন্তু এভাবেই আমাদের জন্য HTML element তৈরি করে। যেমনঃ
+
+```
+const domContainer = document.getElementById("root");
+let p = document.createElement("p");
+p.innerHTML = "Hello World";
+domContainer.appendChild(p)
+```
+
+HTML file এ আমরা যে markup লিখি, Browser তাকে ঠিক এভাবেই createElement দ্বারা কল করে করেই নিজের DOM তা বানিয়ে নেয়। HTML আমাদেরকে একটা সহজে বুঝার জন্য syntactic sugar প্রদান করে যাতে আমরা খুব দ্রুত UI বানাতে পারি। ঠিক একইভাবে React ও  createElement() এর সাহায্যে নিজের জন্যা element বানিয়ে নেয় এবং সব element কে জোড়া লাগিয়ে নিজের জন্য একটা আলাদা DOM তৈরি করে।
+> এই আলাদা DOM কে react এর ভাষায় Virtual DOM বলা হয়
