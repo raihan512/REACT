@@ -42,11 +42,6 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 
 <script src="script.js"></script>
 </body>
-এখানে আমরা প্রথমে এই root আইডিটাকে ধরব
-const domContainer = document.getElementById("root");
-তারপর ReactDOM এর Render method কে কল করবো। এবং এই Render method টি দুটি প্যারামিটার রিসিভ করে।
-1. কি প্রিন্ট করবো তা
-2. কোথায় প্রিন্ট করবো
 জেমনঃ ReactDOM.render('Hello World', domContainer)
 ```
 
