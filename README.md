@@ -216,9 +216,15 @@ root.render(<Increment />);
 তাহলে আমরা array destructuring এর মাধ্যমে দুইটা ভ্যারিয়েবলের মধ্যে state ও ফাংশনটাকে নিয়ে নিলাম।  
 >  let [number, setNumber] = React.useState(0);
 
-এখানে number ভ্যারিয়েবলের মধ্যে নিয়ে নিলাম state এর ইনিশিয়াল ভ্যালুকে আর setNumber এর ভিতরে নিয়ে নিলাম state কে আপডেট করার ফাংশনটিকে। এবার এই setNumber() টিকে দিয়ে আমরা আমাদের number state এর ভ্যালুকে পরিবর্তন করবো। এখন এই number ভ্যারিয়েবল বা state টাকে আমরা যেখানে আমাদের এই state এর ভ্যালুটা দেখাতে চাই সেখানে এভাবে বসিয়ে দেব
+এখানে number ভ্যারিয়েবলের মধ্যে নিয়ে নিলাম state এর ইনিশিয়াল ভ্যালুকে আর setNumber এর ভিতরে নিয়ে নিলাম state কে আপডেট করার ফাংশনটিকে। এবার এই setNumber() টিকে দিয়ে আমরা আমাদের number state এর ভ্যালুকে পরিবর্তন করবো। এখন এই number ভ্যারিয়েবল বা state টাকে আমরা যেখানে আমাদের এই state এর ভ্যালুটা দেখাতে চাই সেখানে এভাবে বসিয়ে দেব বা bind করে দিব।
 
 ```
 <h1 id="display">{number}</h1>
 ```
 যাতে আমাদের state আপডেট হলে সাথে সাথে এইখানে আমাদের আপডেট টা এখানে শো করে। এভাবে {} এর মধ্যে state বসানোকে **interpolation** বলে। 
+<br/>
+এবার বাটন element এর মধ্যে আমরা আমাদের setNumber() কে কল করে দিচ্ছি। 
+
+```
+<button id="increment" onClick={() => setNumber(number + 1)}> Increment + </button>
+```
