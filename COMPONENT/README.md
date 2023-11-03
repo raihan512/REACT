@@ -1,4 +1,11 @@
-## REACT Component
+## REACT Component কি?
+
+Components are individual bits of code. Everything in react is a component. React components are the main feature of React. Components break down a large piece of UI design into small reusable UI components and render them when they are needed.
+<br/><br/>
+Components are two types and they are –
+1. tateless Component - functional component
+2. StateFull Component - class component
+
 
 **Component কেন আসলো?** <br/>
 আমাদের React এর মধ্যে যে element ছিল সেটা আসলে ফাংশনাল কোন কিছু ছিল না। আমাদের ফাংশনাল বৈশিষ্ট্য সহ কিছুর দরকার ছিল যাতে আমরা আমাদের ডাটা ডাইন্যামিক ভাবে আমাদের অ্যাপে দেখাতে পারি। আর এই ফাংশনাল বৈশিষ্ট্যসহ যেই জিনিসটা আমরা আমাদের React অ্যাপে ব্যাবহার করি সেটাই হচ্ছে component। React এর ভিতরে ফাংশন হচ্ছে component আর component React এর element return করে। যেমনঃ
