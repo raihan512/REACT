@@ -87,3 +87,4 @@ ReactDom.render(myElement, domContainer);
 ```
 
 এবার আমরা আমাদের browser এ inspect করলে দেখতে পাব root div এর মধ্যে আরেকটা div তৈরি হয়েছে যার মধ্যে p element টি আছে এবং এই p element এর ভিতরে Hello World লেখাটি আছে। এখন আমরা যদি ২টা element দিতে চাই তাহলে আমরা array of elements ও দিতে পারবো। 
+<img src="https://i.ibb.co/GxmR5Wx/arrofeleemnts.png" />
