@@ -16,8 +16,30 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 তাহলে React এর প্রয়োজন কেন পড়লো?
 <br/>
 প্রথমে আমরা vanilla JS দিয়ে একটা ছোট UI বানাবো এবং সেখান থেকে দেখবো কেন React useful এবং কি অতিরিক্ত সুবিধা আমরা পাচ্ছি react ব্যাবহার করার কারনে।
-<br/>
-<img  width="450" src="https://i.ibb.co/tm5VbPG/ht.png"/>
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Increment UI</title>
+          <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+          <div id="root">
+                    <h1 id="display">0</h1>
+                    <button id="increment">Increment +</button>
+          </div>
+
+          <script src="script.js"></script>
+</body>
+
+</html>
+```
+
 <img  width="450" src="https://i.ibb.co/Z8ZwNxF/Capture.png"/>
 এখানে আমাদের উদ্দেশ্য হলো increment + বাটনে ক্লিক করলে আমদের এই display id এর মান এক এক করে বাড়তে থাকবে। এই কাজ করার জন্য আমাদের JS কোড
 
