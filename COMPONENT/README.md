@@ -3,7 +3,7 @@
 Components are individual bits of code. Everything in react is a component. React components are the main feature of React. Components break down a large piece of UI design into small reusable UI components and render them when they are needed.
 <br/><br/>
 Components are two types and they are –
-1. tateless Component - functional component
+1. Stateless Component - functional component
 2. StateFull Component - class component
 
 
