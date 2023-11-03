@@ -40,7 +40,7 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 </html>
 ```
 
-<img  width="450" src="https://i.ibb.co/Z8ZwNxF/Capture.png"/>
+<img align="right"  width="450" src="https://i.ibb.co/Z8ZwNxF/Capture.png"/>
 এখানে আমাদের উদ্দেশ্য হলো increment + বাটনে ক্লিক করলে আমদের এই display id এর মান এক এক করে বাড়তে থাকবে। এই কাজ করার জন্য আমাদের JS কোড
 
 ```
