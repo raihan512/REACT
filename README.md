@@ -58,7 +58,8 @@ button.addEventListener("click", function () {
 ```
 এখানে আমরা প্রথমে এই root আইডিটাকে ধরব
 const root = ReactDOM.createRoot(document.getElementById("root"));
-তারপর ReactDOM এর Render method কে কল করবো। এবং এই Render method টি প্যারামিটার রিসিভ করে। কি প্রিন্ট করবো তা এই প্যারামিটার এর মধ্যে বলে দিতে হবে।
+তারপর ReactDOM এর Render method কে কল করবো। এবং এই Render method টি প্যারামিটার রিসিভ করে।
+কি প্রিন্ট করবো তা এই প্যারামিটার এর মধ্যে বলে দিতে হবে।
 যেমনঃ root.render("Hello World");
 ```
 তো, ReactDOM আমাদের এই কনটেন্ট কে আমাদের root div এর মধ্যে render করে দিবে এবং আমরা screen এ Hello World লেখাটি দেখতে পাব। এখানে আমরা জাস্ট একটা টেক্সট রেন্ডার করেছি। কিন্তু আমরা চাইলে এখানে যেকোন কিছু রেন্ডার করতে পারবো। শুধু টেক্সট রেন্ডার করে তো আমাদের কোন লাভ নেই। React library দিয়ে আমরা useful জিনিস বানাতে পারি এবং সেগুলোকে রেন্ডার করতে পারি। এই জিনিসগুলোকে react element বলে। React library আমাদেরকে কিছু useful function দিয়েছে, জেগুলো ব্যাবহার করে আমরা react element বানাতে পারি। সেরকম একটা ফাংশন হলো
@@ -128,7 +129,7 @@ root.render(myElement);
 <br/><br/>
 আমরা আমাদের কোডে Transpiler হিসাবে Babel JS কে ব্যাবহার করবো। আমরা যদি Babel JS এর অফিশিয়াল সাইটে যাই এবং আমাদের এই JSX কোডকে সেখানে পেস্ট করি তাহলে দেখবো যে Babel JS আমাদের এই JSX কোডকে vanilla js এ রুপান্তর করে দিয়েছে।
 <br/><br/>
-এবার আমাদের কোডে JSX কে কাজ করানোর জন্য আমরা Babel JS এর CDN আমাদের কোডে বসাব এবং আমাদের JS file যুক্ত করার সময় তার টাইপ text/babel করে দিব। তাহলে আমাদের কোডবেসে JSX কাজ করবে।
+এবার আমাদের কোডে JSX কে কাজ করানোর জন্য আমরা Babel JS এর CDN আমাদের কোডে বসাব এবং আমাদের JS file যুক্ত করার সময় তার টাইপ text/babel করে দিব এটা by-deafault text/javscript থাকে। তাহলে আমাদের কোডবেসে JSX কাজ করবে। যখন আমরা type="text/babel" দিব তখন আমাদের কোডটা Babel JS দিয়ে ঘুরে আসবে।
 
 ```
 <body>
@@ -142,4 +143,79 @@ root.render(myElement);
           <script type="text/babel" src="script.js"></script>
 </body>
 ```
+কিন্তু আমাদের React ব্যাবহারের সুবিধা আমরা এখনো পাইনি। এবার যদি আমাদের Increment এর কাজটা react দিয়ে করি তাহলে।
 
+```
+const root = ReactDOM.createRoot(document.getElementById("root"));
+function Increment() {
+  return (
+    <div>
+      <h1 id="display">0</h1>
+      <button id="increment">Increment +</button>
+    </div>
+  );
+}
+root.render(Increment());
+```
+React এ ফাংশনকে এভাবে লিখা যায়
+
+```
+root.render(<Increment />);
+```
+এবং আমরা আমাদের আগের কোডটিকে React এর এই কোডের নিচে বসাই
+
+```
+const root = ReactDOM.createRoot(document.getElementById("root"));
+function Increment() {
+  return (
+    <div>
+      <h1 id="display">0</h1>
+      <button id="increment">Increment +</button>
+    </div>
+  );
+}
+root.render(<Increment />);
+
+let number = 0;
+const display = document.getElementById("display");
+const button = document.getElementById("increment");
+
+button.addEventListener("click", function () {
+  number++;
+  display.textContent = number;
+});
+```
+কিন্তু লাভ কি হলো? আবার আগের মতই element ধরে ধরে কাজ করতে হচ্ছে। আমরা সুবিধা পাইনি কারণ আমারা ract এর feature এখনো ব্যাবহার করিনি। আমাদের এই ডাটা নিয়ে কাজ করতে হলে আমাদেরকে react এর state ব্যাবহার করতে হবে।
+> State হচ্ছে এমন ডাটা যা আমরা আমাদের UI তে ব্যাবহার করি এবং তা পরিবর্তনশীল
+
+যেমন আমাদের এখানে state হচ্ছে number ভ্যারিয়েবলটি,  যেটি আমাদের অ্যাকশনের উপর ভিত্তি করে পরিবর্তন হচ্চে এবং এটার উপর বেস করে আমাদের কনটেন্ট পরিবর্তন হচ্ছে। আমাদের HTML ডকুমেন্ট এ এমন অসংখ্য sate variable থাকতে পারে, react আমাদেরকে এগুলো নিয়ে কাজ করতে সাহাজ্য করে। React বলছে আমারা যদি তার ওয়েতে state management করি তাহলে আমাদেরকে আর DOM নিয়ে কোন চিন্তা করতে হবে না। React নিজেই আমাদের DOM এর কাজ করে দিবে। আমরা শুধু সময়মত state চেঞ্জ করে দিলেই হবে। 
+<br/><br/>
+এবার আমরা আমাদের আগের কোডের root.render(<Increment />) এর পরের অংশগুলোকে সরিয়ে দেই এবং Increment ফাংশনের ভিতরে React এর built-in একটা ফাংশন এর ভিতরে আমাদের ইনিশিয়াল ডাটার ভ্যালু রাখলাম। এভাবে
+
+```
+const root = ReactDOM.createRoot(document.getElementById("root"));
+function Increment() {
+  let number = React.useState(0);
+  return (
+    <div>
+      <h1 id="display">0</h1>
+      <button id="increment">Increment +</button>
+    </div>
+  );
+}
+root.render(<Increment />);
+```
+এই useState() টা আমাদের এই Increment() এর State টা ম্যানেজ করে দিবে। এই useState এর একটা ডিফল্ট ভ্যালু দিতে হয়, এই ডিফল্ট ভ্যালুটাকে react আমাদের state এর ইনিশিয়াল ভ্যালু হিসেবে সেট করে দেয়। এখানে আমাদের state হলো number ভ্যারিয়েবলটা। তাই আমরা এই state এর মান by-default 0 দিয়ে রাখলাম।
+> let number = React.useState(0);
+
+আমরা চাইলে এই state এর মান যেকোন কিছু (number, string, object, array) দিতে পারি। এখন আমরা যদি এই number state কে কনসোলে প্রিন্ট করি তাহলে আমরা একটি অ্যারে পাব। যার মধ্যে 
+1. ১ম element টা হচ্ছে আমাদের state এর ভ্যালুটা
+2. ২য় টা হচ্ছে একটা ফাংশন
+এই ফাংশনের প্যারামিটারে আমরা যেই ভ্যালু সেট করে দিব, সেই ভ্যালু দিয়ে আমাদের state কে আপডেট করে দিবে। অর্থাৎ, এই ফাংশনের সাহাজ্যে আমরা আমাদের state এর মান পরিবর্তন বা আপডেট করতে পারবো।
+<br/><br/>
+তাহলে আমরা array destructuring এর মাধ্যমে দুইটা ভ্যারিয়েবলের মধ্যে state ও ফাংশনটাকে নিয়ে নিলাম।  
+>  let [number, setNumber] = React.useState(0);
+
+এখানে number ভ্যারিয়েবলের মধ্যে নিয়ে নিলাম state এর ইনিশিয়াল ভ্যালুকে আর setNumber এর ভিতরে নিয়ে নিলাম state কে আপডেট করার ফাংশনটিকে। এবার এই setNumber() টিকে দিয়ে আমরা আমাদের number state এর ভ্যালুকে পরিবর্তন করবো। এখন এই number ভ্যারিয়েবল বা state টাকে আমরা যেখানে আমাদের এই state এর ভ্যালুটা দেখাতে চাই সেখানে এভাবে বসিয়ে দেব
+> <h1 id="display">{number}</h1>
+যাতে আমাদের state আপডেট হলে সাথে সাথে এইখানে আমাদের আপডেট টা এখানে শো করে। এভাবে {} এর মধ্যে state বসানোকে **interpolation** বলে। 
