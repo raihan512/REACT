@@ -42,7 +42,6 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 
 <script src="script.js"></script>
 </body>
-জেমনঃ ReactDOM.render('Hello World', domContainer)
 ```
 
 আমাদের HTML file এ আর কোন HTML লিখতে হবেনা। আমরা আমাদের html file এর একদম শেষে আমাদের increment ফাইল টা যুক্ত করার কারনে এখন আমরা আমাদের increment ফাইল থেকে React ও ReactDOM কে অ্যাক্সেস করতে পারব। টেস্ট করার জন্য console.log(React) এবং console.log(ReactDOM) করে দেখা যেতে পারে।
