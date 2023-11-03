@@ -37,6 +37,14 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 
 ```
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+এখানে আমরা প্রথমে এই root আইডিটাকে ধরব
+const domContainer = document.getElementById("root");
+তারপর ReactDOM এর Render method কে কল করবো। এবং এই Render method টি দুটি প্যারামিটার রিসিভ করে।
+1. কি প্রিন্ট করবো তা
+2. কোথায় প্রিন্ট করবো
+জেমনঃ ReactDOM.render('Hello World', domContainer)
+
 function Clock() {
   return (
     <h1 className="heading">
