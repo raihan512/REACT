@@ -18,30 +18,7 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 প্রথমে আমরা vanilla JS দিয়ে একটা ছোট UI বানাবো এবং সেখান থেকে দেখবো কেন React useful এবং কি অতিরিক্ত সুবিধা আমরা পাচ্ছি react ব্যাবহার করার কারনে।
 
 
-```
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Increment UI</title>
-          <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-          <div id="root">
-                    <h1 id="display">0</h1>
-                    <button id="increment">Increment +</button>
-          </div>
-
-          <script src="script.js"></script>
-</body>
-
-</html>
-```
-
-<img  width="450" src="https://i.ibb.co/Z8ZwNxF/Capture.png"/>
+<img src="https://i.ibb.co/HprbZwp/simple-UI.png" />
 
 এখানে আমাদের উদ্দেশ্য হলো increment + বাটনে ক্লিক করলে আমদের এই display id এর মান এক এক করে বাড়তে থাকবে। এই কাজ করার জন্য আমাদের JS কোড
 
@@ -106,3 +83,12 @@ const domContainer = document.getElementById("root");
 const myElement = React.createElement("div", null, "Hello World");
 ReactDom.render(myElement, domContainer);
 ```
+এবার আমরা আমাদের browser এ inspect করলে দেখতে পাব root div এর মধ্যে আরেকটা div তৈরি হয়েছে যার মধ্যে Hello World লেখাটি আছে। এখন ধরা যাক, আমরা এই div এর মধ্যে একটা p element যুক্ত করতে চাই। তাহলে
+
+```
+const domContainer = document.getElementById("root");
+const myElement = React.createElement("div", null, React.createElement("p", null, "Hello World"));
+ReactDom.render(myElement, domContainer);
+```
+
+এবার আমরা আমাদের browser এ inspect করলে দেখতে পাব root div এর মধ্যে আরেকটা div তৈরি হয়েছে যার মধ্যে p element টি আছে এবং এই p element এর ভিতরে Hello World লেখাটি আছে। এখন আমরা যদি ২টা element দিতে চাই তাহলে আমরা array of elements ও দিতে পারবো। 
