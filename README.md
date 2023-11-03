@@ -32,6 +32,7 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 <img src="https://i.ibb.co/HVvW7fc/112.png"/>
 
 ```
+<body>
 <div id="root"></div>
 <!-- এই root div তার মধ্যেই আমাদের react application টা generate হবে -->
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
