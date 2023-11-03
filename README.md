@@ -30,14 +30,6 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 <br/>
 এবার আমরা আমাদের আগের প্রোগ্রামটার সমাধান টা react js দিয়ে করব।
 ```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Component</title>
-</head>
-
 <body>
           <div id="root"></div>
 
@@ -46,5 +38,4 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 
           <script src="script.js"></script>
 </body>
-</html>
 ```
