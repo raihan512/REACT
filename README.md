@@ -31,11 +31,7 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 এবার আমরা আমাদের আগের প্রোগ্রামটার সমাধান টা react js দিয়ে করব।
 <img src="https://i.ibb.co/HVvW7fc/112.png"/>
 ```
-এখানে আমরা প্রথমে এই root আইডিটাকে ধরব
-const domContainer = document.getElementById("root");
-<body>
-
-          <div id="root"></div>
+<div id="root"></div>
           <!-- এই root div তার মধ্যেই আমাদের react application টা generate হবে -->
 
           <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -44,11 +40,6 @@ const domContainer = document.getElementById("root");
           <!-- এটা আমাদেরকে HTML কোডকে DOM এ generate করে দিবে -->
 
           <script src="script.js"></script>
-</body>
-তারপর ReactDOM এর Render method কে কল করবো। এবং এই Render method টি দুটি প্যারামিটার রিসিভ করে।
-1. কি প্রিন্ট করবো তা
-2. কোথায় প্রিন্ট করবো
-জেমনঃ ReactDOM.render('Hello World', domContainer)
 ```
 <br/>
 আমাদের HTML file এ আর কোন HTML লিখতে হবেনা। আমরা আমাদের html file এর একদম শেষে আমাদের increment ফাইল টা যুক্ত করার কারনে এখন আমরা আমাদের increment ফাইল থেকে React ও ReactDOM কে অ্যাক্সেস করতে পারব। টেস্ট করার জন্য console.log(React) এবং console.log(ReactDOM) করে দেখা যেতে পারে।
