@@ -29,13 +29,4 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 এই সমস্যাটা ফেসবুকের ইঞ্জিনিয়ার রাও ফেস করেছিল। কারণ, ফেসবুকের মত এত বিশাল অ্যাপ্লিকেশনের UI অনেক কমপ্লেক্স এবং সেটা শুধুমাত্র vanilla JS দিয়ে ম্যানেজ করা কঠিন হচ্ছিল। তাই তারা এটার সমাধান নিয়ে কাজ করছিল এবং ২০১১ সালে ফেসবুকের একজন ইঞ্জিনিয়ার Jordan Walke ১ম react js এর একটা প্রোটোটাইপ তৈরি করেন এবং তার নাম দেন fax js। ২০১৩ সালে fax js এর নাম পরিবর্তন করে react js রাখা হয় এবং এটিকে ওপেন সোর্স করে দেয়া হয়। বর্তমানে বেশ বড় বড় কোম্পানিতে react js ব্যাবহৃত হচ্ছে যেমনঃ Netflix, facebook, whatsapp ইত্যাদি।
 <br/>
 এবার আমরা আমাদের আগের প্রোগ্রামটার সমাধান টা react js দিয়ে করব।
-```
-<body>
-          <div id="root"></div>
-
-          <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-          <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-
-          <script src="script.js"></script>
-</body>
-```
+<img src="https://i.ibb.co/KXpb9RL/index-html.png"/>
