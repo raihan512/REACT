@@ -226,5 +226,41 @@ root.render(<Increment />);
 এবার বাটন element এর মধ্যে আমরা আমাদের setNumber() কে কল করে দিচ্ছি। 
 
 ```
+<button id="increment" onClick={setNumber(number + 1)}> Increment + </button>
+```
+কিন্ত এভাবে ফাংশন যুক্ত করলে আমাদের ফাংশনটা নিজে নিজে কল করবে। কিন্তু আমাদের লক্ষ্য হচ্ছে আমরা বাটনে ক্লিক করলেই ফাংশনটা রান হবে, সেক্ষেত্রে আমাদেরকে এভাবে ফাংশন কল করতে হবে। 
+
+```
 <button id="increment" onClick={() => setNumber(number + 1)}> Increment + </button>
 ```
+এবার আমাদের কোডটা সুন্দরভাবে কাজ করবে। এখন আমরা যদি এই Increment ফাংশনটাকেই কয়েকবার ব্যাবহার করি, তাহলে আমাদেরকে শুধু এই ফাংশনটাকে কল করতে হবে, আর কিছু করতে হবে না। যা করার React ই করবে। আমরা যখন যেই বাটনে ক্লিক করব শুধু সেই বাটনের জন্যই তার state পরিবর্তন হবে।
+
+```
+const root = ReactDOM.createRoot(document.getElementById("root"));
+function Increment() {
+  let [number, setNumber] = React.useState(0);
+  return (
+    <div>
+      <h1 id="display">{number}</h1>
+      <button id="increment" onClick={() => setNumber(number + 1)}>
+        Increment +
+      </button>
+    </div>
+  );
+}
+root.render(
+  <div>
+    <Increment />
+    <Increment />
+    <Increment />
+  </div>
+);
+```
+
+তাহলে আমরা এখন পর্যন্ত react ব্যাবহারের কি কি সুবিধা পেলাম? 
+* আমাদেরকে ম্যানুয়ালি আর DOM এর কোন element ধরতে হলো না।
+* state এর ভ্যালু চেঞ্জ হলে সেটাকে আর ম্যানুয়ালি আমাদেরকে সেট করে দিতে হলো না।
+* একই রকম কাজের জন্য আমাদেরকে কোড রিপিট করতে হলো না
+* আমরা একবার component বানাবো এবং জতবার খুশি তাকে ব্যাবহার করতে পারবো
+
+React আমাদেরকে পুরো ফাংশনালিটির সাথে component দিতে পারে। তাই react কে component library ও বলা হয়। component গুলো একেবারে আলাদা ও স্বাধীন হওয়ায় বড় অ্যাপ্লিকেশনের জন্য ডেভেলপার রা আলাদা আলাদা component নিয়ে কাজ করতে পারে এবং সবগুলো জোড়া লাগিয়ে একটা বিশাল project বানানো যায় proper management করে।
