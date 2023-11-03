@@ -33,14 +33,16 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 
 ```
 <body>
-<div id="root"></div>
-<!-- এই root div তার মধ্যেই আমাদের react application টা generate হবে -->
-<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-<!-- এটা আমাদেরকে HTML element generate করে দিবে এবং render করে দিবে -->
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<!-- এটা আমাদেরকে HTML কোডকে DOM এ generate করে দিবে -->
+  <div id="root"></div>
+  <!-- এই root div তার মধ্যেই আমাদের react application টা generate হবে -->
 
-<script src="script.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <!-- এটা আমাদেরকে HTML element generate করে দিবে এবং render করে দিবে -->
+
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <!-- এটা আমাদেরকে HTML কোডকে DOM এ generate করে দিবে -->
+
+  <script src="script.js"></script>
 </body>
 ```
 
