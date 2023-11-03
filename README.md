@@ -30,14 +30,15 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 <br/>
 এবার আমরা আমাদের আগের প্রোগ্রামটার সমাধান টা react js দিয়ে করব।
 <img src="https://i.ibb.co/HVvW7fc/112.png"/>
+<br/>
 ```
-<div id="root"></div>
           <!-- এই root div তার মধ্যেই আমাদের react application টা generate হবে -->
+          <div id="root"></div>
 
-          <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
           <!-- এটা আমাদেরকে HTML element generate করে দিবে এবং render করে দিবে -->
-          <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+          <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
           <!-- এটা আমাদেরকে HTML কোডকে DOM এ generate করে দিবে -->
+          <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
           <script src="script.js"></script>
 ```
