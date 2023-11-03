@@ -128,7 +128,7 @@ root.render(myElement);
 <br/><br/>
 আমরা আমাদের কোডে Transpiler হিসাবে Babel JS কে ব্যাবহার করবো। আমরা যদি Babel JS এর অফিশিয়াল সাইটে যাই এবং আমাদের এই JSX কোডকে সেখানে পেস্ট করি তাহলে দেখবো যে Babel JS আমাদের এই JSX কোডকে vanilla js এ রুপান্তর করে দিয়েছে।
 <br/><br/>
-আবার আমাদের কোডে JSX কে কাজ করানোর জন্য আমরা Babel JS এর CDN আমাদের কোডে বসাব এবং আমাদের JS file যুক্ত করার সময় তার তার টাইপ text/babel করে দিব। তাহলে আমাদের কোডবেসে JSX কাজ করবে।
+এবার আমাদের কোডে JSX কে কাজ করানোর জন্য আমরা Babel JS এর CDN আমাদের কোডে বসাব এবং আমাদের JS file যুক্ত করার সময় তার টাইপ text/babel করে দিব। তাহলে আমাদের কোডবেসে JSX কাজ করবে।
 
 ```
 <body>
@@ -136,6 +136,7 @@ root.render(myElement);
 
           <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
           <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+          <!-- Babel JS CDN -->
           <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
           <script type="text/babel" src="script.js"></script>
