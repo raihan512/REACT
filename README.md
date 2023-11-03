@@ -34,14 +34,7 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 আমাদের HTML file এ আর কোন HTML লিখতে হবেনা। আমরা আমাদের html file এর একদম শেষে আমাদের increment ফাইল টা যুক্ত করার কারনে এখন আমরা আমাদের increment ফাইল থেকে React ও ReactDOM কে অ্যাক্সেস করতে পারব। টেস্ট করার জন্য console.log(React) এবং console.log(ReactDOM) করে দেখা যেতে পারে।
 <br/>
 আমরা একটু আগেই জেনেছিলাম যে, React আমাদের html গুলোকে generate করবে অথবা create করবে। আর ReactDOM সেগুলোকে আমাদের browser এর dom এ render করবে যেন আমরা দেখতে পাই। দুইটা আলাদা হওয়ার কারণ হচ্ছে React শুধু website বানানোর জন্য তৈরি করা হয়নি। আমরা React website এর বদলে যখন mobile application তৈরি করবো তখন এই ReactDOM এর পরিবর্তে React Native নামের আরেকটা লাইব্রেরী ব্যাবহার করবো। এভাবে আমরা একই কোড দিয়ে বানানো UI কে mobile application এ render করতে পারবো। একারণেই এ দুটো প্যাকেজ কে আলাদা রাখা হয়েছে। আমরা মূলত যা করবো সবই এই React কে ব্যাবহার করে করবো। ReactDOM শুধু print করার কাজে ব্যবহৃত হবে।
-```
-এখানে আমরা প্রথমে এই root আইডিটাকে ধরব
-const domContainer = document.getElementById("root");
-তারপর ReactDOM এর Render method কে কল করবো। এবং এই Render method টি দুটি প্যারামিটার রিসিভ করে।
-1. কি প্রিন্ট করবো তা
-2. কোথায় প্রিন্ট করবো
-জেমনঃ ReactDOM.render('Hello World', domContainer)
-```
+
 ```
 const root = ReactDOM.createRoot(document.getElementById("root"));
 function Clock() {
