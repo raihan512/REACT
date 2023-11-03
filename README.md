@@ -42,3 +42,19 @@ const domContainer = document.getElementById("root");
 2. কোথায় প্রিন্ট করবো
 জেমনঃ ReactDOM.render('Hello World', domContainer)
 ```
+```
+
+class Clock extends React.Component {
+  render() {
+    return (
+      <h1 className="heading">
+        <span className="text"></span>
+        <span className="time">
+          {new Date().toLocaleTimeString(this.props.locale)}
+        </span>
+      </h1>
+    );
+  }
+}
+root.render(<Clock locale="bn-BD" />);
+```
