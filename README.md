@@ -43,18 +43,14 @@ const domContainer = document.getElementById("root");
 জেমনঃ ReactDOM.render('Hello World', domContainer)
 ```
 ```
-
-class Clock extends React.Component {
-  render() {
-    return (
-      <h1 className="heading">
-        <span className="text"></span>
-        <span className="time">
-          {new Date().toLocaleTimeString(this.props.locale)}
-        </span>
-      </h1>
-    );
-  }
+const root = ReactDOM.createRoot(document.getElementById("root"));
+function Clock() {
+  return (
+    <h1 className="heading">
+      <span className="text"></span>
+      <span className="time">{new Date().toLocaleTimeString()}</span>
+    </h1>
+  );
 }
-root.render(<Clock locale="bn-BD" />);
+root.render(Clock());
 ```
