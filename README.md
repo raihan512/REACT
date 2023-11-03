@@ -18,11 +18,33 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 প্রথমে আমরা vanilla JS দিয়ে একটা ছোট UI বানাবো এবং সেখান থেকে দেখবো কেন React useful এবং কি অতিরিক্ত সুবিধা আমরা পাচ্ছি react ব্যাবহার করার কারনে।
 <br/>
 <img  width="450" src="https://i.ibb.co/tm5VbPG/ht.png"/>
-এখানে আমাদের উদ্দেশ্য হলো increment + বাটনে ক্লিক করলে আমদের এই display id এর মান এক এক করে বাড়তে থাকবে। এই কাজ করার জন্য আমাদের JS কোড
 <img  width="450" src="https://i.ibb.co/Z8ZwNxF/Capture.png"/>
+এখানে আমাদের উদ্দেশ্য হলো increment + বাটনে ক্লিক করলে আমদের এই display id এর মান এক এক করে বাড়তে থাকবে। এই কাজ করার জন্য আমাদের JS কোড
 <img src="https://i.ibb.co/YPxxfrb/script-js.png"/>
 <br/>
 এখন আমরা browser এর increment + বাটনে ক্লিক করলে 0 এর মান 1 করে বৃদ্ধি পেতে থাকবে। এই কাজটা আমরা খুবই সহজে করলাম। কিন্তু এটা বড় অ্যাপ্লিকেশনের জন্য উপযোগী নয়। আমাদের এই কোডে একটিমাত্র counter আছে, যার কারনে এটাকে তেমন একটা সমস্যা মনে হচ্ছে না। কিন্তু বাস্তবে আমাদের এমন অনেক counter থাকতে পারে।
 <br/>
 ধরা যাক আমাদের এই কোডেই আরেকটা counter আছে। তাহলে আমাদের ওই counter এর জন্য HTML এ আলাদা একটা counter বাটন ও counter ডিসপ্লে যুক্ত করতে হবে। এবং তাদের সাথে interaction করার জন্য তাদেরকে আলাদা আলাদা নতুন id দিতে হবে। এরপর JS ফাইলে এই id গুলোকে ধরতে হবে এবং এই counter এর বাটনে আরেকটা event listener function দিতে হবে। তার মানে ২টা একইরকমের কাজের জন্য আমাদেরকে ২ বার কোড লিখতে হয়েছে। এরকম আরও counter থাকলে আরও কোড রিপিট করতে হত। হয়ত এই কোডকে আমরা optimization করতে পারতাম একটা single function দিয়ে এবং তার মধ্যে প্যারমিটার পাস করে। যাই করিনা কেন, এই HTML element গুলোকে কিন্তু আলাদা করে ধরতেই হবে এবং সেটা করতে গিয়ে ভুল ও হতে পারে। সেইসাথে কোড ম্যানেজ করাও কঠিন হয়ে পড়বে। আগের JS developer রা কোড কমপ্লেক্সিটির সাথে কোড ম্যানেজ করতেও এমন সমস্যার মধ্যে পড়তো।
 <br/>
+এই সমস্যাটা ফেসবুকের ইঞ্জিনিয়ার রাও ফেস করেছিল। কারণ, ফেসবুকের মত এত বিশাল অ্যাপ্লিকেশনের UI অনেক কমপ্লেক্স এবং সেটা শুধুমাত্র vanilla JS দিয়ে ম্যানেজ করা কঠিন হচ্ছিল। তাই তারা এটার সমাধান নিয়ে কাজ করছিল এবং ২০১১ সালে ফেসবুকের একজন ইঞ্জিনিয়ার Jordan Walke ১ম react js এর একটা প্রোটোটাইপ তৈরি করেন এবং তার নাম দেন fax js। ২০১৩ সালে fax js এর নাম পরিবর্তন করে react js রাখা হয় এবং এটিকে ওপেন সোর্স করে দেয়া হয়। বর্তমানে বেশ বড় বড় কোম্পানিতে react js ব্যাবহৃত হচ্ছে যেমনঃ Netflix, facebook, whatsapp ইত্যাদি।
+<br/>
+এবার আমরা আমাদের আগের প্রোগ্রামটার সমাধান টা react js দিয়ে করব।
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Component</title>
+</head>
+
+<body>
+          <div id="root"></div>
+
+          <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+          <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+          <script src="script.js"></script>
+</body>
+</html>
+```
