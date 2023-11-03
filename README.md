@@ -34,6 +34,12 @@ Frontend হলো, যেখানে user interact করে। যেমন, 
 ```
 <div id="root"></div>
 <!-- এই root div তার মধ্যেই আমাদের react application টা generate হবে -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<!-- এটা আমাদেরকে HTML element generate করে দিবে এবং render করে দিবে -->
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<!-- এটা আমাদেরকে HTML কোডকে DOM এ generate করে দিবে -->
+
+<script src="script.js"></script>
 এখানে আমরা প্রথমে এই root আইডিটাকে ধরব
 const domContainer = document.getElementById("root");
 তারপর ReactDOM এর Render method কে কল করবো। এবং এই Render method টি দুটি প্যারামিটার রিসিভ করে।
