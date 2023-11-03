@@ -108,3 +108,37 @@ domContainer.appendChild(p)
 
 HTML file এ আমরা যে markup লিখি, Browser তাকে ঠিক এভাবেই createElement দ্বারা কল করে করেই নিজের DOM তা বানিয়ে নেয়। HTML আমাদেরকে একটা সহজে বুঝার জন্য syntactic sugar প্রদান করে যাতে আমরা খুব দ্রুত UI বানাতে পারি। ঠিক একইভাবে React ও  createElement() এর সাহায্যে নিজের জন্যা element বানিয়ে নেয় এবং সব element কে জোড়া লাগিয়ে নিজের জন্য একটা আলাদা DOM তৈরি করে।
 > এই আলাদা DOM কে react এর ভাষায় Virtual DOM বলা হয়
+
+নরমালি আমরা HTML element বানাই, indirectly html markup syntax use করে। React ও ঠিক একইভাবে আমাদেরকে সহজে বুঝার জন্য এবং দ্রুত কোড করার জন্য তার নিজস্ব একটা  markup syntax দিয়েছে যেটা দিয়ে আমরা react এর element বানাতে পারি। সেই syntax টার নাম হচ্ছে
+> JSX &#8594; JavaScript XML
+
+এটা দেখতে HTML এর মত হলেও, এটা HTML না। এই markup syntax ব্যাবহার করে আমরা react এর element বানাতে পারি। আমরা একটু আগে যে root div এর মধ্যে একটি div এর মধ্যে দুটি p element বানিয়েছিলাম, সেটাকে এখন যদি আমরা JSX এর মাধ্যমে লিখি
+
+```
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const myElement = (
+  <div>
+    <p>Hello World</p>
+    <p>Hello Bangladesh</p>
+  </div>
+);
+root.render(myElement);
+```
+আমরা এই JSX এর মাধ্যমেই আমাদের HTML element লিখবো। কিন্তু আমরা এই JSX লিখছি আমাদের JS file এর মধ্যে। কিন্তু JavaScript তো এই syntax বোঝেনা। সেক্ষেত্রে আমাদেরকে একটা Transpiler ব্যাবহার করতে হবে যে আমাদের এই JSX কোডকে vanilla js code এ রুপান্তর করে দিবে।
+<br/><br/>
+আমরা আমাদের কোডে Transpiler হিসাবে Babel JS কে ব্যাবহার করবো। আমরা যদি Babel JS এর অফিশিয়াল সাইটে যাই এবং আমাদের এই JSX কোডকে সেখানে পেস্ট করি তাহলে দেখবো যে Babel JS আমাদের এই JSX কোডকে vanilla js এ রুপান্তর করে দিয়েছে।
+<br/><br/>
+আবার আমাদের কোডে JSX কে কাজ করানোর জন্য আমরা Babel JS এর CDN আমাদের কোডে বসাব এবং আমাদের JS file যুক্ত করার সময় তার তার টাইপ text/babel করে দিব। তাহলে আমাদের কোডবেসে JSX কাজ করবে।
+
+```
+<body>
+          <div id="root"></div>
+
+          <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+          <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+          <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+          <script type="text/babel" src="script.js"></script>
+</body>
+```
+
