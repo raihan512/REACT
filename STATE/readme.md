@@ -11,19 +11,27 @@ React শুধুমাত্র দুইটা সময়ে react kore.
    props শুধু তার প্যারেন্ট component চেঞ্জ করতে পারে যেমন
 
 ```
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-Class clock extends React.component {
-          rebder()
-          return()
+class Clock extends React.Component {
+  render() {
+    return (
+      <h1>
+        <span>{new Date().toLocaleTimeString(this.props.locale)}</span>
+      </h1>
+    );
+  }
 }
 
 function App() {
-          return (
-                    <div>
-                              <clock locale="bn-BD" />
-                    </div>
-          )
+  return (
+    <div>
+      <Clock locale="bn-BD" />
+    </div>
+  );
 }
+
+root.render(<App />);
 ```
 
 অর্থাৎ, props চেঞ্জ হলেই clock() টি রি-রেন্ডার হবে।
