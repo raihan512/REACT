@@ -1,10 +1,10 @@
 import "./App.css";
-import ComponentDidMount from "./Components/ClassLifecycle/Clock/Clock";
+import Clock from "./Components/ClassLifecycle/Clock/Clock";
 
 function App() {
   return (
     <div className="App">
-      <ComponentDidMount></ComponentDidMount>
+      <Clock locale="bn-BD"></Clock>
     </div>
   );
 }

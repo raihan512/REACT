@@ -4,10 +4,19 @@ class Clock extends Component {
   state = {
     currentTime: new Date(),
   };
+
   componentDidMount() {
-    setInterval(() => {
+    this.clockTime = setInterval(() => {
       this.setState({ currentTime: new Date() });
     }, 1000);
+  }
+
+  componentDidUpdate() {
+    console.log("CurrentTime updated");
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.clockTime);
   }
 
   render() {
