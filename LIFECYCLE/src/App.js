@@ -1,5 +1,5 @@
 import "./App.css";
-import ComponentDidMount from "./Components/ClassLifecycle/ComponentDidMount/ComponentDidMount";
+import ComponentDidMount from "./Components/ClassLifecycle/Clock/Clock";
 
 function App() {
   return (
