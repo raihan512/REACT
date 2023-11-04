@@ -25,11 +25,9 @@ React তার class component এর জন্য আমাদেরকে ক
 <br/>
 আমরা যদি চাই, কোন component লোড হওয়ার আগেই বা componentDidMount হওয়ার আগেই কোন ভ্যারিয়েবলকে বা state কে ইনিশিয়ালাইজ করতে, তাহলে আমাদেরকে constructor ফাংশন ব্যাবহার করতে হবে। এই constructor ফাংশনের মধ্যে আমারা super() কে ব্যাবহার করবো যেন আমরা React.Component class এর প্রোপার্টি বা মেথডগুলোকে আমরা আমাদের নিজস্ব class এ আক্সেস করতে পারি।
 
-<figure>
 <img src="https://i.ibb.co/TW977qW/componentdidmount.png" />
-  <figcaption>Figure 1</figcaption>
-</figure>
-এই কোডে আমাদের লক্ষ্য হলো, সবার প্রথমে আমরা একটা state নিব যা আমাদের Increment বাটনে ক্লিক করার সাথে সাথে আপডেট হবে। তাই আমরা আমাদের component লোড হওয়ার আগেই এই state এ একটা ভ্যালু দিয়ে দিব যাতে তাকে আমরা আমাদের কোড লোড হওয়ার পরে বা component আমাদের DOM এ রেন্ডার হওয়ার পরে আমরা এর state চেঞ্জ করতে পারি। তাই আমরা constructor() এর ভিতরে this.state = {counter: 0 } নিয়েছি এবং এটাকে আমাদের component এর p element এর মধ্যে bind করে দিয়েছি। Figure 1 ছবিটি দেখুন।
+
+এই কোডে আমাদের লক্ষ্য হলো, সবার প্রথমে আমরা একটা state নিব যা আমাদের Increment বাটনে ক্লিক করার সাথে সাথে আপডেট হবে। তাই আমরা আমাদের component লোড হওয়ার আগেই এই state এ একটা ভ্যালু দিয়ে দিব যাতে তাকে আমরা আমাদের কোড লোড হওয়ার পরে বা component আমাদের DOM এ রেন্ডার হওয়ার পরে আমরা এর state চেঞ্জ করতে পারি। তাই আমরা constructor() এর ভিতরে this.state = {counter: 0 } নিয়েছি এবং এটাকে আমাদের component এর p element এর মধ্যে bind করে দিয়েছি। উপড়ের ছবিটি দেখুন।
 
 ```
 
