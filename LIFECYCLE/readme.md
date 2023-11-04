@@ -22,3 +22,11 @@ React তার class component এর জন্য আমাদেরকে ক
 # componentDidMount
 
 আমাদের component DOM এ লোড হয়েছে কি না, তা বুঝার জন্য আমরা componentDidMount() এর ব্যাবহার করি। এই মেথড ব্যাবহার করলে যখনি আমাদের component টা DOM এ লোড হবে এবং লোড হওয়ার পরে এই মেথডটা কল হয়ে যাবে এবং এই মেথডের ভিতরের লজিক রান করবে।
+<br/>
+আমরা যদি চাই, কোন component লোড হওয়ার আগেই বা componentDidMount হওয়ার আগেই কোন ভ্যারিয়েবলকে বা state কে ইনিশিয়ালাইজ করতে, তাহলে আমাদেরকে constructor ফাংশন ব্যাবহার করতে হবে। এই constructor ফাংশনের মধ্যে আমারা super() কে ব্যাবহার করবো যেন আমরা React.Component class এর প্রোপার্টি বা মেথডগুলোকে আমরা আমাদের নিজস্ব class এ আক্সেস করতে পারি।
+
+<img src="https://i.ibb.co/TW977qW/componentdidmount.png" />
+
+```
+
+```
