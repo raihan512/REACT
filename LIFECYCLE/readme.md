@@ -29,12 +29,9 @@ React তার class component এর জন্য আমাদেরকে ক
 import React, { Component } from "react";
 
 class Clock extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentTime: new Date(),
-    };
-  }
+  state = {
+    currentTime: new Date(),
+  };
   componentDidMount() {
     setInterval(() => {
       this.setState({ currentTime: new Date() });
@@ -70,12 +67,9 @@ export default Clock;
 import React, { Component } from "react";
 
 class Clock extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentTime: new Date(),
-    };
-  }
+  state = {
+    currentTime: new Date(),
+  };
   componentDidMount() {
     setInterval(() => {
       this.setState({ currentTime: new Date() });

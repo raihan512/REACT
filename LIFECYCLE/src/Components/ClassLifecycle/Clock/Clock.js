@@ -1,20 +1,13 @@
 import React, { Component } from "react";
 
 class Clock extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentTime: new Date(),
-    };
-  }
+  state = {
+    currentTime: new Date(),
+  };
   componentDidMount() {
     setInterval(() => {
       this.setState({ currentTime: new Date() });
     }, 1000);
-  }
-
-  componentDidUpdate() {
-    console.log("CurrentTime updated");
   }
 
   render() {
