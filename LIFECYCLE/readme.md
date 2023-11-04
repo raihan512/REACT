@@ -19,7 +19,7 @@ React তার class component এর জন্য আমাদেরকে ক
 - componentDidUpdate
 - componentWillUnmount
 
-# componentDidMount
+### componentDidMount
 
 আমাদের component DOM এ লোড হয়েছে কি না, তা বুঝার জন্য আমরা componentDidMount() এর ব্যাবহার করি। এই মেথড ব্যাবহার করলে যখনি আমাদের component টা DOM এ লোড হবে এবং লোড হওয়ার পরে এই মেথডটা কল হয়ে যাবে এবং এই মেথডের ভিতরের লজিক রান করবে।
 <br/>
@@ -60,7 +60,7 @@ export default Clock;
 এই কোডে আমরা আমাদের currentTime টাকে setInterval() মাধ্যমে আপডেট করবো।
 <br/> <br/>
 
-## componentDidUpdate
+### componentDidUpdate
 
 আমাদের component আপডেট হলে React আমাদেরকে componentDidUpdate() ফাংশনটিকে কল করে দেয়। আমাদের component আপডেট হওয়ার পর যদি আমরা কোন কাজ করতে চাই তাহলে সেই কোড এখানে লিখবো। এখন আমরা আমাদের আগে কোডে currentTime state টাকে ১ সেকেন্ড পরপর আপডেট করছিলাম। যেহেতু ১ সেকেন্ড পরপর আপডেট হচ্ছে তাই আমরা এই component এর মধ্যেই আমাদের component আপডেট হওয়ার মেথডটা চেক করে দেখি।
 <br/>
