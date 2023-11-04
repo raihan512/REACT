@@ -13,6 +13,10 @@ class Clock extends Component {
     }, 1000);
   }
 
+  componentDidUpdate() {
+    console.log("CurrentTime updated");
+  }
+
   render() {
     return (
       <div>

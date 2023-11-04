@@ -59,3 +59,41 @@ export default Clock;
 <br/>
 এই কোডে আমরা আমাদের currentTime টাকে setInterval() মাধ্যমে আপডেট করবো।
 <br/> <br/>
+
+## componentDidUpdate
+
+আমাদের component আপডেট হলে React আমাদেরকে componentDidUpdate() ফাংশনটিকে কল করে দেয়। আমাদের component আপডেট হওয়ার পর যদি আমরা কোন কাজ করতে চাই তাহলে সেই কোড এখানে লিখবো। এখন আমরা আমাদের আগে কোডে currentTime state টাকে ১ সেকেন্ড পরপর আপডেট করছিলাম। যেহেতু ১ সেকেন্ড পরপর আপডেট হচ্ছে তাই আমরা এই component এর মধ্যেই আমাদের component আপডেট হওয়ার মেথডটা চেক করে দেখি।
+<br/>
+এজন্য আমরা componentDidUpdate() এর মধ্যে কনসোলে একটি string দিলাম, যেন আমাদের state আপডেট হলে এই string টি আমাদের কনসোলে প্রিন্ট হয়। যেহেতু, প্রতি ১ সেকেন্ড পর আমাদের state আপডেট হচ্ছে তাই প্রতি ১ সেকেন্ড পরপর আমাদের কনসোলে এই string টি প্রিন্ট হবে।
+
+```
+import React, { Component } from "react";
+
+class Clock extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currentTime: new Date(),
+    };
+  }
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({ currentTime: new Date() });
+    }, 1000);
+  }
+
+  componentDidUpdate() {
+    console.log("CurrentTime updated");
+  }
+
+  render() {
+    return (
+      <div>
+        <p>{this.state.currentTime.toLocaleTimeString()}</p>
+      </div>
+    );
+  }
+}
+
+export default Clock;
+```
