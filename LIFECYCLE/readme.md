@@ -187,4 +187,7 @@ class Clock extends Component {
 export default Clock;
 ```
 
-render() নিজেও একটা lifecycle event
+## React Functional Component Lifecycle
+
+> [!NOTE]
+> render() নিজেও একটা lifecycle event

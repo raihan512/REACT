@@ -11,9 +11,9 @@ class Clock extends Component {
     }, 1000);
   }
 
-  componentDidUpdate() {
-    console.log("CurrentTime updated");
-  }
+  // componentDidUpdate() {
+  //   console.log("CurrentTime updated");
+  // }
 
   componentWillUnmount() {
     clearInterval(this.clockTime);
